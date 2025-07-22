@@ -1,12 +1,83 @@
-# React + Vite
+# 🏏 CricZone - Live Cricket Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visually engaging React-based cricket dashboard that fetches live match data from [CricketData.org](https://cricketdata.org/). CricZone provides real-time scores and match statuses with an elegant UI, built using Tailwind CSS and React Router.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
 
-## Expanding the ESLint configuration
+* 🏏 Live cricket scores from [CricketData.org](https://cricketdata.org)
+* 📍 Match location, match type, and live status indicators
+* 🔄 Refresh button to fetch updated data manually
+* 📱 Responsive layout with clean visual structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚙️ Tech Stack
+
+* **Frontend:** React.js (with Hooks)
+* **Styling:** Tailwind CSS
+* **Routing:** React Router DOM
+* **Icons:** Heroicons, React Icons
+* **Data Handling:** Context API + custom hooks
+
+---
+
+## 🧐 React Hooks Used
+
+* `useState` – to manage dynamic data (matches, index)
+* `useEffect` – to trigger fetch calls when component mounts
+* `useContext` – to access global match data in any component
+* `useParams` – for dynamic routing (match detail page)
+
+---
+
+## 📂 Folder Structure Overview
+
+```
+CricZone/
+├── public/
+│   ├── DemoVideo/
+│   │   └── CricZone.mp4
+│   └── screenshots/
+│       ├── CricZone_internalPage.png
+│       ├── CricZone_mobile.png
+│       └── CricZone_thumbnail.png
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── About, Footer, Home, MatchCard, MatchDetails, Navbar, RefreshButton
+│   ├── context/
+│   │   └── matchDetails.jsx
+│   ├── mockAPI/
+│   ├── index.css, index.html, main.jsx, Layout.jsx
+├── .gitignore, package.json, README.md
+```
+
+---
+
+## 🖼️ Screenshots
+
+| Internal Page                                      | Mobile View                                | App Thumbnail                                    |
+| -------------------------------------------------- | ------------------------------------------ | ------------------------------------------------ |
+| ![Internal](screenshots/CricZone_internalPage.png) | ![Mobile](screenshots/CricZone_mobile.png) | ![Thumbnail](screenshots/CricZone_thumbnail.png) |
+
+---
+
+## 🎥 Demo Video
+
+[▶️ Watch Demo](public/DemoVideo/CricZone.mp4)
+
+---
+
+## 🙇‍♂️ Author
+
+**Harshal Pawar**
+🔗 [linkedin.com/in/harshalpawar1204](https://linkedin.com/in/harshalpawar1204)
+💻 Passionate about full-stack development & real-world problem solving.
+
+---
+
+## 📜 License
+
+MIT

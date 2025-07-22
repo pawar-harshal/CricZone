@@ -56,11 +56,9 @@ CricZone/
 
 ## 🖼️ Screenshots
 
-| Internal Page                                                                                                          | Mobile View                                                                                                    | App Thumbnail                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| ![Internal](https://github.com/pawar-harshal/CricZone/blob/main/public/screenshots/CricZone_internalPage.png?raw=true) | ![Mobile](https://github.com/pawar-harshal/CricZone/blob/main/public/screenshots/CricZone_mobile.png?raw=true) | ![Thumbnail](https://github.com/pawar-harshal/CricZone/blob/main/public/screenshots/CricZone_thumbnail.png?raw=true) |
-
-
+| Internal Page | Mobile View | App Thumbnail |
+|---------------|-------------|----------------|
+| ![Internal](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_internalPage.png) | ![Mobile](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_mobile.png) | ![Thumbnail](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_thumbnail.png) |
 
 ## 🙇‍♂️ Author
 

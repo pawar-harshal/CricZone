@@ -1,40 +1,28 @@
+🏏 CricZone - Live Cricket Dashboard
+A visually engaging React-based cricket dashboard that fetches live match data from CricketData.org. CricZone provides real-time scores and match statuses with an elegant UI, built using Tailwind CSS and React Router.
+🔥 Features
 
+🏏 Live cricket scores fetched from CricketData.org
+📍 Match location, match type, and live status indicators
+🔄 Refresh button to fetch updated data manually
+📱 Responsive layout with a clean and modern visual structure
 
-# 🏏 CricZone - Live Cricket Dashboard
+⚙️ Tech Stack
 
-A visually engaging React-based cricket dashboard that fetches live match data from [CricketData.org](https://cricketdata.org/). CricZone provides real-time scores and match statuses with an elegant UI, built using Tailwind CSS and React Router.
+Frontend: React.js (with Hooks)
+Styling: Tailwind CSS
+Routing: React Router DOM
+Icons: Heroicons, React Icons
+Data Handling: Context API + custom hooks
 
+🧐 React Hooks Used
 
+useState – Manages dynamic data (matches, index)
+useEffect – Triggers fetch calls when components mount
+useContext – Accesses global match data across components
+useParams – Enables dynamic routing for match detail pages
 
-## 🔥 Features
-
-* 🏏 Live cricket scores from [CricketData.org](https://cricketdata.org)
-* 📍 Match location, match type, and live status indicators
-* 🔄 Refresh button to fetch updated data manually
-* 📱 Responsive layout with clean visual structure
-
-
-## ⚙️ Tech Stack
-
-* **Frontend:** React.js (with Hooks)
-* **Styling:** Tailwind CSS
-* **Routing:** React Router DOM
-* **Icons:** Heroicons, React Icons
-* **Data Handling:** Context API + custom hooks
-
-
-
-## 🧐 React Hooks Used
-
-* `useState` – to manage dynamic data (matches, index)
-* `useEffect` – to trigger fetch calls when component mounts
-* `useContext` – to access global match data in any component
-* `useParams` – for dynamic routing (match detail page)
-
-
-
-## 📂 Folder Structure Overview
-
+📂 Folder Structure Overview
 CricZone/
 ├── public/
 │   └── screenshots/
@@ -44,31 +32,65 @@ CricZone/
 ├── src/
 │   ├── assets/
 │   ├── components/
-│   │   ├── About, Footer, Home, MatchCard, MatchDetails, Navbar, RefreshButton
+│   │   ├── About.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Home.jsx
+│   │   ├── MatchCard.jsx
+│   │   ├── MatchDetails.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── RefreshButton.jsx
 │   ├── context/
 │   │   └── matchDetails.jsx
 │   ├── mockAPI/
-│   ├── index.css, index.html, main.jsx, Layout.jsx
-├── .gitignore, package.json, README.md
-```
+│   ├── index.css
+│   ├── index.html
+│   ├── main.jsx
+│   ├── Layout.jsx
+├── .gitignore
+├── package.json
+├── README.md
+
+🛠️ Installation
+
+Clone the repository:git clone https://github.com/pawar-harshal/CricZone.git
+
+
+Navigate to the project directory:cd CricZone
+
+
+Install dependencies:npm install
+
+
+Obtain an API key from CricketData.org and add it to your environment variables (e.g., in a .env file):REACT_APP_CRICKETDATA_API_KEY=your_api_key_here
+
+
+Start the development server:npm start
 
 
 
-## 🖼️ Screenshots
+🚀 Usage
 
-| Internal Page | Mobile View | App Thumbnail |
-|---------------|-------------|----------------|
-| ![Internal](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_internalPage.png) | ![Mobile](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_mobile.png) | ![Thumbnail](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_thumbnail.png) |
+Open the app in your browser (default: http://localhost:3000).
+Browse live cricket matches on the homepage.
+Click a match to view detailed stats.
+Use the refresh button to update match data manually.
 
-## 🙇‍♂️ Author
-
-**Harshal Pawar**
-🔗 [linkedin.com/in/harshalpawar1204](https://linkedin.com/in/harshalpawar1204)
-💻 Passionate about full-stack development & real-world problem solving.
+🖼️ Screenshots
 
 
 
-## 📜 License
+Internal Page
+Mobile View
+App Thumbnail
 
-MIT
 
+
+
+
+
+
+
+🙇‍♂️ Author
+Harshal Pawar🔗 - https://www.linkedin.com/in/harshalpawar1204/ LinkedIn💻 Passionate about full-stack development and solving real-world problems.
+📜 License
+This project is licensed under the MIT License - see the LICENSE file for details.

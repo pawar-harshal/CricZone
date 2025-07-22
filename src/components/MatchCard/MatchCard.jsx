@@ -8,26 +8,27 @@ function MatchCard({ match }) {
             className="block "
         >
 
-            <div className={`relative w-[300px] h-[300px] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md overflow-hidden flex flex-col justify-between mt-5 ${match.matchStarted ? "snake-border" : ""}`}>
+            <div className={`relative w-[300px] h-[300px] bg-gray-900 border border-gray-700 rounded-xl shadow-md overflow-hidden flex flex-col justify-between mt-5 ${match.matchStarted ? "snake-border" : ""}`}>
 
                 <div className="absolute top-2 right-2 z-10">
-                    <span className="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300 shadow-sm">
-                        {match.matchType.toUpperCase()} 
+                    <span className="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-0.5 rounded-sm shadow-sm">
+                        {match.matchType.toUpperCase()}
                     </span>
                 </div>
+
                 <div className="absolute top-2 left-2 z-10">
-                    <span className={`bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-green-700 dark:text-gray-200 shadow-sm live-indicator ${!match.matchEnded && !match.status.includes("stumps") ? "" : "hidden"} `}>
+                    <span className={`bg-green-700 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-sm shadow-sm live-indicator ${!match.matchEnded && !match.status.includes("stumps") ? "" : "hidden"}`}>
                         {!match.matchEnded ? "LIVE" : ""}
                     </span>
                 </div>
 
                 <div className="p-4 flex flex-col justify-between h-full">
 
-                    <div className="text-sm font-semibold text-gray-800 dark:text-gray-200 text-center line-clamp-2 break-words max-w-[250px] mx-auto mt-4">
+                    <div className="text-sm font-semibold text-gray-200 text-center line-clamp-2 break-words max-w-[250px] mx-auto mt-4">
                         {match.name}
                     </div>
 
-                    <div className="bg-gradient-to-r from-amber-400/20 to-yellow-300/10 text-amber-100 p-4 rounded-md flex flex-col gap-2 text-sm sm:text-base mt-4">
+                    <div className="bg-gradient-to-r from-green-800/20 to-green-700/10 text-amber-100 p-4 rounded-md flex flex-col gap-2 text-sm sm:text-base mt-4">
                         {match.teamInfo?.map((team, index) => (
                             <div key={index} className="flex justify-between items-center">
                                 <span className="flex items-center gap-2 max-w-[100px] overflow-hidden">
@@ -44,7 +45,6 @@ function MatchCard({ match }) {
                                         </span>
                                     )}
                                 </span>
-
                                 <span className="text-gray-200 text-sm">
                                     {match?.score?.[index]?.r !== undefined
                                         ? `${match.score[index].r} / ${match.score[index].w} (${match.score[index].o})`
@@ -66,12 +66,14 @@ function MatchCard({ match }) {
                     </p>
 
                     <div className="text-right pt-2">
-                        <span className="text-sm font-semibold text-blue-500 dark:text-blue-400 hover:underline">
+                        <span className="text-sm font-semibold text-blue-400 hover:underline">
                             VIEW DETAILS →
                         </span>
                     </div>
+
                 </div>
             </div>
+
 
         </Link>
     );

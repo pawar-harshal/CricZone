@@ -1,34 +1,44 @@
 🏏 CricZone - Live Cricket Dashboard
 A visually engaging React-based cricket dashboard that fetches live match data from CricketData.org. CricZone provides real-time scores and match statuses with an elegant UI, built using Tailwind CSS and React Router.
+
+---
+
 🔥 Features
 
-🏏 Live cricket scores fetched from CricketData.org
-📍 Match location, match type, and live status indicators
-🔄 Refresh button to fetch updated data manually
-📱 Responsive layout with a clean and modern visual structure
+* 🏏 Live cricket scores from CricketData.org
+* 📍 Match location, match type, and live status indicators
+* 🔄 Refresh button to fetch updated data manually
+* 📱 Responsive layout with a clean visual structure
+
+---
 
 ⚙️ Tech Stack
 
-Frontend: React.js (with Hooks)
-Styling: Tailwind CSS
-Routing: React Router DOM
-Icons: Heroicons, React Icons
-Data Handling: Context API + custom hooks
+* Frontend: React.js (with Hooks)
+* Styling: Tailwind CSS
+* Routing: React Router DOM
+* Icons: Heroicons, React Icons
+* Data Handling: Context API + custom hooks
+
+---
 
 🧐 React Hooks Used
 
-useState – Manages dynamic data (matches, index)
-useEffect – Triggers fetch calls when components mount
-useContext – Accesses global match data across components
-useParams – Enables dynamic routing for match detail pages
+* useState – Manages dynamic data (matches, index)
+* useEffect – Triggers fetch calls when components mount
+* useContext – Accesses global match data across components
+* useParams – Enables dynamic routing for match detail pages
 
-📂 Folder Structure Overview
+---
+
+📂 Folder Structure
+
 CricZone/
 ├── public/
 │   └── screenshots/
-│       ├── CricZone_internalPage.png
-│       ├── CricZone_mobile.png
-│       └── CricZone_thumbnail.png
+│       ├── CricZone\_internalPage.png
+│       ├── CricZone\_mobile.png
+│       └── CricZone\_thumbnail.png
 ├── src/
 │   ├── assets/
 │   ├── components/
@@ -50,47 +60,55 @@ CricZone/
 ├── package.json
 ├── README.md
 
+---
+
 🛠️ Installation
 
-Clone the repository:git clone https://github.com/pawar-harshal/CricZone.git
+1. Clone the repository:
+   `git clone https://github.com/pawar-harshal/CricZone.git`
 
+2. Navigate to the project directory:
+   `cd CricZone`
 
-Navigate to the project directory:cd CricZone
+3. Install dependencies:
+   `npm install`
 
+4. Add your CricketData API key to a `.env` file:
+   `REACT_APP_CRICKETDATA_API_KEY=your_api_key_here`
 
-Install dependencies:npm install
+5. Start the development server:
+   `npm start`
 
-
-Obtain an API key from CricketData.org and add it to your environment variables (e.g., in a .env file):REACT_APP_CRICKETDATA_API_KEY=your_api_key_here
-
-
-Start the development server:npm start
-
-
+---
 
 🚀 Usage
 
-Open the app in your browser (default: http://localhost:3000).
-Browse live cricket matches on the homepage.
-Click a match to view detailed stats.
-Use the refresh button to update match data manually.
+* Open `http://localhost:3000` in your browser
+* Browse live cricket matches on the homepage
+* Click a match to view detailed stats
+* Use the refresh button to update match data
+
+---
 
 🖼️ Screenshots
 
-
-
 Internal Page
+![Internal](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_internalPage.png)
+
 Mobile View
+![Mobile](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_mobile.png)
+
 App Thumbnail
+![Thumbnail](https://raw.githubusercontent.com/pawar-harshal/CricZone/main/public/screenshots/CricZone_thumbnail.png)
 
-
-
-
-
-
-
+---
 
 🙇‍♂️ Author
-Harshal Pawar🔗 - https://www.linkedin.com/in/harshalpawar1204/ LinkedIn💻 Passionate about full-stack development and solving real-world problems.
+**Harshal Pawar**
+🔗 LinkedIn -https://www.linkedin.com/in/harshalpawar1204/
+💻 Passionate about full-stack development and solving real-world problems
+
+---
+
 📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License – see the LICENSE file for details.

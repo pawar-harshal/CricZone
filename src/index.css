@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+body{
+      
+      font-family: monospace;
+      background-color: #1F2937 !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadePulse {
+  0% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.2; transform: scale(1); }
+}
+
+.bat-indicator {
+  animation: fadePulse 1.5s infinite;
+}
+.live-indicator {
+  animation: fadePulse 3s infinite;
+}
+

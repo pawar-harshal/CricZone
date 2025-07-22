@@ -115,113 +115,63 @@ function MatchDetails() {
   ];
 
   return (
-    <div className="min-h-screen container px-1.5 sm:px-6 lg:px-8">
+    <div className="min-h-screen container px-1.5 sm:px-6 lg:px-8 text-gray-200 bg-gray-900">
       <div className="flex flex-col sm:p-6">
 
+        <div className="bg-gray-800 rounded-lg p-4 sm:p-6 space-y-6 sm:mt-25 mt-30">
 
-        <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 sm:p-6 space-y-6 sm:mt-25 mt-30">
-
-          <div className="flex  flex-col-reverse sm:flex-row sm:justify-between gap-4">
-            <span className="text-sm sm:text-base font-bold text-gray-800 dark:text-gray-200">
+          <div className="flex flex-col-reverse sm:flex-row sm:justify-between gap-4">
+            <span className="text-sm sm:text-base font-bold">
               {match.name || 'Unknown Match'} ({match.matchType?.toUpperCase() || 'N/A'})
             </span>
 
-            <div className="text-sm sm:text-sm font-bold text-gray-800 dark:text-gray-200 flex items-center ">
-              <MapPinIcon className="h-10 w-10 sm:h-5 sm:w-5 mr-2 text-red-300" aria-label="Venue" />
+            <div className="text-sm sm:text-sm font-bold flex items-center">
+              <MapPinIcon className="h-10 w-10 sm:h-5 sm:w-5 mr-2 text-red-300" />
               {match.venue || 'Unknown Venue'}
               <RefreshButton />
-
             </div>
-
           </div>
 
-
-
-
-
-
-
-
-          {/* Teams with Sciores */}
+          {/* Teams with Scores */}
           <div className="flex flex-col sm:flex-row justify-around items-center gap-4 sm:gap-6 mt-4 sm:mt-7">
-            <div className="flex flex-col items-center relative w-full sm:w-auto">
-              {!match.status?.toLowerCase().includes('won') &&
-                !match.status?.toLowerCase().includes('not started') &&
-                battingTeamIndex !== -1 &&
-                battingTeamIndex === 0 && (
-                  <GiCricketBat
-                    className="h-6 w-6 sm:h-8 sm:w-8 absolute -top-2 right-0 sm:right-2 text-green-600 bat-indicator"
-                    aria-label="Batting Indicator"
-                  />
-                )}
-              <span className="font-medium text-sm sm:text-base text-gray-800 dark:text-gray-200 mb-3 sm:mb-5 flex items-center gap-2">
-                <img
-                  className="h-4 w-4 sm:h-5 sm:w-5 shrink-0"
-                  src={teamInfo[0].img}
-                  alt={teamInfo[0].name}
-                />
-                {teamInfo[0].name?.toUpperCase()}
-              </span>
-              <span
-                className={`
-                  text-2xl sm:text-4xl font-medium px-3 py-2 sm:px-4 sm:py-3 rounded-md border
-                  ${battingTeamIndex === 0 && !match.status?.toLowerCase().includes('not started')
-                    ? 'bg-green-100 text-green-800 border-green-300 dark:bg-green-900 dark:text-green-300'
-                    : 'bg-black text-gray-800 border-gray-300 dark:bg-black dark:text-gray-300'
-                  }
-                `}
-              >
-                {getScoreDisplay(teamInfo[0].name)}
-              </span>
-            </div>
-            <div className="flex flex-col items-center relative w-full sm:w-auto">
-              {!match.status?.toLowerCase().includes('won') &&
-                !match.status?.toLowerCase().includes('not started') &&
-                battingTeamIndex !== -1 &&
-                battingTeamIndex === 1 && (
-                  <GiCricketBat
-                    className="h-6 w-6 sm:h-8 sm:w-8 absolute -top-2 right-0 sm:right-2 text-green-600 bat-indicator"
-                    aria-label="Batting Indicator"
-                  />
-                )}
-              <span className="font-medium text-sm sm:text-base text-gray-800 dark:text-gray-200 mb-3 sm:mb-5 flex items-center gap-2">
-                <img
-                  className="h-4 w-4 sm:h-5 sm:w-5 shrink-0"
-                  src={teamInfo[1].img}
-                  alt={teamInfo[1].name}
-                />
-                {teamInfo[1].name?.toUpperCase()}
-              </span>
-              <span
-                className={`
-                  text-2xl sm:text-4xl font-medium px-3 py-2 sm:px-4 sm:py-3 rounded-md border
-                  ${battingTeamIndex === 1 && !match.status?.toLowerCase().includes('not started')
-                    ? 'bg-green-100 text-green-800 border-green-300 dark:bg-green-900 dark:text-green-300'
-                    : 'bg-black text-gray-800 border-gray-300 dark:bg-black dark:text-gray-300'
-                  }
-                `}
-              >
-                {getScoreDisplay(teamInfo[1].name)}
-              </span>
-            </div>
+            {[0, 1].map((i) => (
+              <div key={i} className="flex flex-col items-center relative w-full sm:w-auto">
+                {!match.status?.toLowerCase().includes('won') &&
+                  !match.status?.toLowerCase().includes('not started') &&
+                  battingTeamIndex === i && (
+                    <GiCricketBat className="h-6 w-6 sm:h-8 sm:w-8 absolute -top-2 right-0 sm:right-2 text-green-500 bat-indicator" />
+                  )}
+                <span className="font-medium text-sm sm:text-base mb-3 sm:mb-5 flex items-center gap-2">
+                  <img className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" src={teamInfo[i].img} alt={teamInfo[i].name} />
+                  {teamInfo[i].name?.toUpperCase()}
+                </span>
+                <span
+                  className={`text-2xl sm:text-4xl font-medium px-3 py-2 sm:px-4 sm:py-3 rounded-md border ${battingTeamIndex === i && !match.status?.toLowerCase().includes('not started')
+                      ? 'bg-green-900 text-green-300 border-green-700'
+                      : 'bg-black text-gray-300 border-gray-700'
+                    }`}
+                >
+                  {getScoreDisplay(teamInfo[i].name)}
+                </span>
+              </div>
+            ))}
           </div>
 
           <div className="text-center">
-            <h3 className="text-base sm:text-lg font-semibold text-green-600 dark:text-green-400">
+            <h3 className="text-base sm:text-lg font-semibold text-green-400">
               {match.status || 'Status Pending'}
             </h3>
           </div>
         </div>
 
-
+        {/* Other Matches */}
         <div>
-
-          <h1 className="text-lg text-gray-200 font-bold ms-5 mt-5">Other Matches :</h1>
+          <h1 className="text-lg font-bold ms-5 mt-5">Other Matches :</h1>
           <div className="grid grid-cols-12 border-x-2 border-gray-700 mt-2">
             <div className="col-span-12">
               {matches?.data?.length === 0 ? (
                 <div className="flex justify-center items-center h-[500px]">
-                  <div className="rounded-full h-20 w-20 bg-white animate-ping"></div>
+                  <div className="rounded-full h-20 w-20 bg-gray-700 animate-ping"></div>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4 justify-items-center">
@@ -235,15 +185,15 @@ function MatchDetails() {
 
           <NavLink to="/">
             <div className="w-full flex justify-center">
-              <button className="bg-gray-100 text-gray-800 text-sm font-semibold px-4 py-2 rounded-sm dark:bg-gray-700 dark:text-gray-300 shadow-sm mt-4 hover:text-gray-700 hover:bg-gray-300">
+              <button className="bg-gray-700 text-gray-200 text-sm font-semibold px-4 py-2 rounded-sm shadow-sm mt-4 hover:bg-gray-600">
                 View More
               </button>
             </div>
           </NavLink>
         </div>
-
       </div>
     </div>
+
   );
 }
 

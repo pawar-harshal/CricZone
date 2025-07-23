@@ -17,10 +17,12 @@ function MatchCard({ match }) {
                 </div>
 
                 <div className="absolute top-2 left-2 z-10">
-                    <span className={`bg-green-700 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-sm shadow-sm live-indicator ${!match.matchEnded && !match.status.includes("stumps") ? "" : "hidden"}`}>
-                        {!match.matchEnded ? "LIVE" : ""}
+                    <span className={`bg-green-700 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-sm shadow-sm live-indicator ${!match.matchEnded && !match.status.toLowerCase().includes("stumps") ? "" : "hidden"
+                        }`}>
+                        {!match.matchEnded && !match.status.toLowerCase().includes("stumps") ? "LIVE" : ""}
                     </span>
                 </div>
+
 
                 <div className="p-4 flex flex-col justify-between h-full">
 

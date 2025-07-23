@@ -25,8 +25,7 @@ export const MatchDetailsProvider = ({ children }) => {
         // }
 
 
-        console.log("ENV KEYS:", import.meta.env.VITE_API_KEY_1, import.meta.env.VITE_API_KEY_2);
-        console.log("KEY ARRAY:", API_KEYS);
+
 
 
         for (let i = 0; i < API_KEYS.length; i++) {
